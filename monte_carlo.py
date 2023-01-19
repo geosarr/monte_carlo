@@ -36,7 +36,7 @@ class MonteCarlo:
             the array of samples
         """
         assert scale > 0, f"scale = {scale} is not valid, scale should be strictly positive"
-        assert shape > 0, f"a = {shape} is not valid, shape should be strictly positive"
+        assert shape > 0, f"shape = {shape} is not valid, shape should be strictly positive"
         return scale / np.random.uniform(0, 1, size) ** (1 / shape)
 
     @classmethod
@@ -53,7 +53,7 @@ class MonteCarlo:
         Returns:
             the samples from a normal distribution
         """
-        assert std > 0, f"r = {std} is not valid, std should be strictly positive"
+        assert std > 0, f"std = {std} is not valid, std should be strictly positive"
         standard_normal = cls.gen_rand_by_accept_reject(
             gen_from_proposal=lambda size: np.random.laplace(
                 loc=0, scale=1 / 0.24, size=size
