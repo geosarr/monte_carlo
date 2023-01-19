@@ -6,7 +6,7 @@ format:
 	black *.py
 
 lint: 
-	pylint --disable=C monte_carlo tests utils
+	pylint --disable=C0114,C0115,C0116 monte_carlo tests utils
 	# pylint --disable=R,C,E1101,W1309,E0611 monte_carlo tests utils
 
 test: 
